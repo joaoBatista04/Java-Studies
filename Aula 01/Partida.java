@@ -1,8 +1,15 @@
 public class Partida {
-    private int nGolsA, nGolsB;
+    private int[] placar = new int[2];
     private Time timeA;
     private Time timeB;
 
+    //Construtor que usa parametros
+    public Partida(Time timeA, Time timeB){
+        this.timeA = timeA;
+        this.timeB = timeB;
+    }
+
+    //Getters e Setters para os atributos da classe
     public Time getTimeA() {
         return this.timeA;
     }
@@ -20,18 +27,26 @@ public class Partida {
     }
 
     public void incGolTimeA(){
-        nGolsA++;
+        placar[0]++;
     }
 
     public void incGolTimeB(){
-        nGolsB++;
+        placar[1]++;
     }
 
     public int getGolsTimeA(){
-        return nGolsA;
+        return placar[0];
     }
 
     public int getGolsTimeB(){
-        return nGolsB;
+        return placar[1];
+    }
+
+    public void imprimeResultadoPartida(){
+        System.out.println("PARTIDA:");
+        System.out.println("Time A: " + timeA.getNome());
+        System.out.println("Gols Time A: " + this.getGolsTimeA());
+        System.out.println("Time B: " + timeB.getNome());
+        System.out.println("Gols Time B: " + this.getGolsTimeB() + "\n");
     }
 }
