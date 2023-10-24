@@ -1,0 +1,1 @@
+java -cp bin App | dot -Tpng -o saida.png
